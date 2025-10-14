@@ -19,14 +19,16 @@ class ProductInfolist
                 TextEntry::make('description')
                     ->placeholder('-')
                     ->columnSpanFull(),
-                TextEntry::make('category_id')
+                TextEntry::make('category.name')
                     ->numeric(),
-                TextEntry::make('supplier_id')
+                TextEntry::make('supplier.name')
                     ->numeric()
                     ->placeholder('-'),
                 TextEntry::make('purchase_price')
+                ->prefix('$')
                     ->numeric(),
                 TextEntry::make('selling_price')
+                ->prefix('$')
                     ->numeric(),
                 TextEntry::make('current_stock')
                     ->numeric(),
