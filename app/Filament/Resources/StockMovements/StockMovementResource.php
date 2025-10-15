@@ -20,8 +20,11 @@ class StockMovementResource extends Resource
 {
     protected static ?string $model = StockMovement::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ArrowPath;
+    public static function getNavigationGroup(): ?string
+    {
+        return __('Inventory Management');
+    }
     public static function form(Schema $schema): Schema
     {
         return StockMovementForm::configure($schema);

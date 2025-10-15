@@ -20,10 +20,13 @@ class PurchaseOrderResource extends Resource
 {
     protected static ?string $model = PurchaseOrder::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ClipboardDocumentList;
 
     protected static ?string $recordTitleAttribute = 'order_number';
-
+    public static function getNavigationGroup(): ?string
+    {
+        return __('Inventory Management');
+    }
     public static function form(Schema $schema): Schema
     {
         return PurchaseOrderForm::configure($schema);
